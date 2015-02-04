@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<link rel="shortcut icon" type="image/jpg" href="resources/images/angularjs-tab-logo.png">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+	<script type="text/javascript" src="resources/js/main.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<title>My Angular App</title>
+</head>
+<body>
+	<form>
+		<div class = 'form-group' ng-controller = 'SearchController'>
+			<div class='col-lg-3'>
+				<input type='text' ng-model='song.title' class='form-control' placeholder='Enter title'>
+				<input type='text' ng-model='song.artist' class='form-control' placeholder='Enter the artist'>
+				<button ng-click='search(song)' class="btn btn-default"> Search Song</button>
+				<h3>You have search the song, {{song.title}}!</h3>
+				<pre>Song = {{song | json}}</pre>
+				<pre>master = {{ master | json }}</pre>
+			</div>
+		</div>
+	</form>
+	<div ng-controller = 'PlayerController'>
+		<button ng-click='play()' class='btn btn-default ' ng-show='!playing'>Play it!</button>
+		<button ng-click='stop()' class='btn btn-default' ng-show='playing'>Stop it!</button>
+			Playing audio : {{playing}}
+	</div>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
